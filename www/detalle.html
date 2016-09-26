@@ -1,0 +1,12 @@
+<button type="button" class="btn btn-default" aria-label="Left Align" ui-sref="home">
+    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar
+</button>
+<div class="container" ng-controller="DetailController as detalle">
+    <img style="float:left" src="{{libro.img}}" alt="" width="200" height="360" />
+    <div class="content-heading">
+        <a ui-ref="detalle">{{libro.titulo}}</a>
+    </div>
+    <p>{{libro.descripcion}}</p>
+    <div style="clear:both">
+    </div>
+</div>

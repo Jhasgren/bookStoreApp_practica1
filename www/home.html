@@ -1,0 +1,28 @@
+<h1>Libros</h1>
+<form class="form-inline">
+    <div class="form-group">
+        <label for="exampleInputName2">Titulo</label>
+        <input type="text" class="form-control" id="titulo" ng-model="titulo.titulo">
+    </div>
+    <div class="form-group col-md-4 col-md-offset-2">
+        <label for="exampleInputEmail2">Ordenar</label>
+        <select class="form-control" ng-model="orden">
+            <option selected>titulo</option>
+            <option>editorial</option>
+        </select>
+    </div>
+</form>
+
+<div class="container" ng-controller="StoreController as store">
+    <div class="list-group">
+        <div class="list-group-item" ng-hide="product.soldOut" ng-repeat="libro in store.libros | filter:titulo | orderBy:orden">
+            <img style="float:left" src="{{libro.img}}" alt="" width="200" height="360" />
+            <div class="content-heading">
+                <a ui-sref="detalle({idLibro: $index})">{{libro.titulo}}</a>
+            </div>
+            <p>{{libro.descripcion}}</p>
+            <div style="clear:both">
+            </div>
+        </div>
+    </div>
+</div>
